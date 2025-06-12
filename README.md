@@ -41,15 +41,14 @@ Não é necessário nenhum servidor ou processo de build para executar este proj
 1.  **Clone o repositório:**
 
     ```bash
-    git clone https://github.com/seu-usuario/nome-do-repositorio.git
+    git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/wellingtonspdev/Prova-BDL.git)
     ```
 
-    *(Substitua `seu-usuario/nome-do-repositorio` pelo caminho do seu repositório)*
 
 2.  **Navegue até a pasta do projeto:**
 
     ```bash
-    cd nome-do-repositorio
+    Prova-BDL
     ```
 
 3.  **Abra o arquivo `index.html`:**
