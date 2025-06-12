@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova de Banco de Dados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="provaForm">
+            <div class="form-header">
+                <h1>Prova de Banco de Dados</h1>
+                <p>Otimização de Consultas, Índices, Triggers e Stored Procedures/Functions</p>
+            </div>
+
+            <div class="form-body">
+                <div class="section">
+                    <div class="section-title">Parte 1: Otimização de Consultas</div>
+                    <div class="question">
+                        <div class="question-number">1. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Explique por que o operador &lt;&gt; em uma consulta como SELECT * FROM CLIENTE WHERE nome &lt;&gt; 'Pedro' pode forçar o gerenciador de banco de dados a varrer a tabela inteira.</div>
+                        <textarea name="q1" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">2. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Considerando o operador AND, qual condição deve ser escrita primeiro para otimizar uma consulta? Dê um exemplo prático usando as colunas nome_aluno e cidade.</div>
+                        <textarea name="q2" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">3. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Considerando o operador OR, qual condição deve ser escrita primeiro para otimizar uma consulta? Dê um exemplo prático usando as colunas cidade e tipo.</div>
+                        <textarea name="q3" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">4. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Por que a utilização da expressão NOT deve ser evitada sempre que possível? Como você reescreveria a consulta Select * from Vendas WHERE NOT (vendas > 100.00) de forma mais performática?</div>
+                        <textarea name="q4" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">5. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Qual é o impacto no desempenho de usar funções como UPPER() diretamente em uma coluna na cláusula WHERE? Qual é a recomendação para padronizar os dados nesse cenário?</div>
+                        <textarea name="q5" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">6. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">De acordo com a pontuação de desempenho apresentada no material, qual dos seguintes operadores tende a ser o mais rápido em uma busca?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q6a" name="q6" value="a" required><label for="q6a">a) LIKE</label></div>
+                            <div class="radio-option"><input type="radio" id="q6b" name="q6" value="b"><label for="q6b">b) &lt;&gt;</label></div>
+                            <div class="radio-option"><input type="radio" id="q6c" name="q6" value="c"><label for="q6c">c) &gt;</label></div>
+                            <div class="radio-option"><input type="radio" id="q6d" name="q6" value="d"><label for="q6d">d) =</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">7. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Em uma consulta SELECT, por que é recomendado que a ordem das colunas na cláusula WHERE siga, se possível, a mesma ordem de criação da tabela?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q7a" name="q7" value="a" required><label for="q7a">a) Para garantir que o resultado seja exibido na ordem correta.</label></div>
+                            <div class="radio-option"><input type="radio" id="q7b" name="q7" value="b"><label for="q7b">b) Porque o otimizador pode processar a consulta de forma mais eficiente.</label></div>
+                            <div class="radio-option"><input type="radio" id="q7c" name="q7" value="c"><label for="q7c">c) Para evitar o uso de índices.</label></div>
+                            <div class="radio-option"><input type="radio" id="q7d" name="q7" value="d"><label for="q7d">d) Porque é uma exigência da sintaxe SQL.</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">8. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Como o otimizador de consultas provavelmente reescreverá a condição vendas - 40,00 = comissão?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q8a" name="q8" value="a" required><label for="q8a">a) comissão + 40,00 = vendas</label></div>
+                            <div class="radio-option"><input type="radio" id="q8b" name="q8" value="b"><label for="q8b">b) vendas = comissão - 40,00</label></div>
+                            <div class="radio-option"><input type="radio" id="q8c" name="q8" value="c"><label for="q8c">c) comissão = -vendas + 40,00</label></div>
+                            <div class="radio-option"><input type="radio" id="q8d" name="q8" value="d"><label for="q8d">d) A expressão não será alterada.</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">9. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual é a forma otimizada de escrever a consulta Select * from Cliente where id_cliente = 1000 OR tipo = 'A' OR id_cliente = 2000;?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q9a" name="q9" value="a" required><label for="q9a">a) Select * from Cliente where tipo = 'A' OR id_cliente = 1000 OR id_cliente = 2000;</label></div>
+                            <div class="radio-option"><input type="radio" id="q9b" name="q9" value="b"><label for="q9b">b) A consulta já está em sua forma mais otimizada.</label></div>
+                            <div class="radio-option"><input type="radio" id="q9c" name="q9" value="c"><label for="q9c">c) Select * from Cliente where id_cliente = 1000 OR id_cliente = 2000 OR Tipo = 'A';</label></div>
+                            <div class="radio-option"><input type="radio" id="q9d" name="q9" value="d"><label for="q9d">d) Select * from Cliente where tipo = 'A' AND (id_cliente = 1000 OR id_cliente = 2000);</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">10. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual tipo de busca é considerada "trabalhosa para o gerenciador" e pode ser evitada com a padronização dos dados na inserção?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q10a" name="q10" value="a" required><label for="q10a">a) SELECT * FROM CLIENTE WHERE codigo = 5;</label></div>
+                            <div class="radio-option"><input type="radio" id="q10b" name="q10" value="b"><label for="q10b">b) SELECT * FROM CLIENTE WHERE nome &lt;&gt; 'Pedro';</label></div>
+                            <div class="radio-option"><input type="radio" id="q10c" name="q10" value="c"><label for="q10c">c) SELECT * FROM CLIENTE WHERE UPPER(nome_cliente) = 'JOÃO SILVA';</label></div>
+                            <div class="radio-option"><input type="radio" id="q10d" name="q10" value="d"><label for="q10d">d) SELECT * FROM CLIENTE WHERE cidade = 'São Paulo';</label></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Parte 2: Índices</div>
+                    <div class="question">
+                        <div class="question-number">11. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Descreva a "troca" essencial (benefícios vs. custos) envolvida na utilização de índices. Quais operações são aceleradas e quais podem ter o desempenho reduzido?</div>
+                        <textarea name="q11" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">12. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Diferencie as abordagens proativa e reativa para a criação de índices. Qual delas está associada à "Análise de Caminhos de Acesso"?</div>
+                        <textarea name="q12" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">13. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Explique como um Índice Bitmap funciona. Para qual tipo de coluna (em termos de cardinalidade) ele é mais apropriado e qual é seu principal ponto fraco?</div>
+                        <textarea name="q13" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">14. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">O que é um Índice de Ordem Invertida (Reverse Key) e qual problema específico de desempenho ele visa resolver? Qual é a principal desvantagem ou limitação desse tipo de índice?</div>
+                        <textarea name="q14" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">15. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Descreva o processo para identificar a fragmentação de um índice no Oracle, mencionando o comando usado para popular a tabela INDEX_STATS.</div>
+                        <textarea name="q15" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">16. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Para qual tipo de coluna um índice B-Tree é mais indicado?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q16a" name="q16" value="a" required><label for="q16a">a) Colunas com baixa cardinalidade (poucos valores distintos), como 'sexo'.</label></div>
+                            <div class="radio-option"><input type="radio" id="q16b" name="q16" value="b"><label for="q16b">b) Colunas com alta cardinalidade (muitos valores distintos), como uma chave primária.</label></div>
+                            <div class="radio-option"><input type="radio" id="q16c" name="q16" value="c"><label for="q16c">c) Apenas para colunas do tipo VARCHAR2.</label></div>
+                            <div class="radio-option"><input type="radio" id="q16d" name="q16" value="d"><label for="q16d">d) Apenas para colunas usadas em funções.</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">17. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual tipo de índice deve ser criado para otimizar uma consulta que utiliza uma expressão na cláusula WHERE, como WHERE (qt_estoque - qt_vendida) > 100?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q17a" name="q17" value="a" required><label for="q17a">a) Índice Bitmap</label></div>
+                            <div class="radio-option"><input type="radio" id="q17b" name="q17" value="b"><label for="q17b">b) Índice Baseado em Função</label></div>
+                            <div class="radio-option"><input type="radio" id="q17c" name="q17" value="c"><label for="q17c">c) Índice B-Tree</label></div>
+                            <div class="radio-option"><input type="radio" id="q17d" name="q17" value="d"><label for="q17d">d) Índice de Ordem Invertida</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">18. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual comando SQL é utilizado para reconstruir um índice que foi identificado como fragmentado?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q18a" name="q18" value="a" required><label for="q18a">a) VALIDATE INDEX nome_indice;</label></div>
+                            <div class="radio-option"><input type="radio" id="q18b" name="q18" value="b"><label for="q18b">b) MONITOR INDEX nome_indice USAGE;</label></div>
+                            <div class="radio-option"><input type="radio" id="q18c" name="q18" value="c"><label for="q18c">c) ALTER INDEX nome_indice REBUILD;</label></div>
+                            <div class="radio-option"><input type="radio" id="q18d" name="q18" value="d"><label for="q18d">d) DROP INDEX nome_indice;</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">19. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual view de dicionário de dados do Oracle pode ser consultada para verificar se um índice está sendo utilizado, após o monitoramento ter sido ativado?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q19a" name="q19" value="a" required><label for="q19a">a) USER_INDEXES</label></div>
+                            <div class="radio-option"><input type="radio" id="q19b" name="q19" value="b"><label for="q19b">b) DBA_IND_COLUMNS</label></div>
+                            <div class="radio-option"><input type="radio" id="q19c" name="q19" value="c"><label for="q19c">c) V$OBJECT_USAGE</label></div>
+                            <div class="radio-option"><input type="radio" id="q19d" name="q19" value="d"><label for="q19d">d) INDEX_STATS</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">20. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual das seguintes afirmações sobre Índices Bitmap é verdadeira?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q20a" name="q20" value="a" required><label for="q20a">a) São ideais para ambientes com muitas operações de UPDATE, DELETE e INSERT.</label></div>
+                            <div class="radio-option"><input type="radio" id="q20b" name="q20" value="b"><label for="q20b">b) Funcionam melhor em colunas com alta cardinalidade.</label></div>
+                            <div class="radio-option"><input type="radio" id="q20c" name="q20" value="c"><label for="q20c">c) Seu ponto fraco é a modificação de valores da coluna chave, pois pode bloquear grandes porções do índice.</label></div>
+                            <div class="radio-option"><input type="radio" id="q20d" name="q20" value="d"><label for="q20d">d) Não podem ser criados em tabelas com grande quantidade de linhas.</label></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Parte 3: Triggers</div>
+                    <div class="question">
+                        <div class="question-number">21. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">O que é um trigger e qual é sua principal característica em relação à forma como é executado?</div>
+                        <textarea name="q21" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">22. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Cite e descreva brevemente os três tipos de triggers apresentados no material: DML, DDL e INSTEAD OF.</div>
+                        <textarea name="q22" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">23. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Descreva três utilidades ou aplicações práticas para Triggers DML.</div>
+                        <textarea name="q23" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">24. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Explique o que é um trigger INSTEAD OF e descreva o cenário apresentado no material onde seu uso foi necessário para resolver um erro de inserção em uma VIEW.</div>
+                        <textarea name="q24" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">25. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Quais são as duas principais regras ou limitações que devem ser consideradas ao criar um trigger no Oracle (por exemplo, quais comandos não podem ser usados)?</div>
+                        <textarea name="q25" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">26. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Em um trigger de linha (FOR EACH ROW) disparado por um evento de INSERT, qual será o conteúdo do qualificador :OLD?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q26a" name="q26" value="a" required><label for="q26a">a) O valor que está sendo inserido.</label></div>
+                            <div class="radio-option"><input type="radio" id="q26b" name="q26" value="b"><label for="q26b">b) O valor da linha antes da inserção.</label></div>
+                            <div class="radio-option"><input type="radio" id="q26c" name="q26" value="c"><label for="q26c">c) Será o mesmo que o valor de :NEW.</label></div>
+                            <div class="radio-option"><input type="radio" id="q26d" name="q26" value="d"><label for="q26d">d) Será NULL.</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">27. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual das seguintes opções descreve um Trigger DDL?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q27a" name="q27" value="a" required><label for="q27a">a) Controla eventos como INSERT, UPDATE e DELETE.</label></div>
+                            <div class="radio-option"><input type="radio" id="q27b" name="q27" value="b"><label for="q27b">b) Dispara em VIEWs que não podem ser manipuladas diretamente.</label></div>
+                            <div class="radio-option"><input type="radio" id="q27c" name="q27" value="c"><label for="q27c">c) Controla eventos de mudança na estrutura do banco, como CREATE, ALTER e DROP.</label></div>
+                            <div class="radio-option"><input type="radio" id="q27d" name="q27" value="d"><label for="q27d">d) É usado exclusivamente para gerar valores de colunas.</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">28. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">No exemplo de auditoria com a tabela COPIAEMP, o que o qualificador :NEW.EMPNO representa dentro do trigger INSERE?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q28a" name="q28" value="a" required><label for="q28a">a) O número do empregado que foi deletado.</label></div>
+                            <div class="radio-option"><input type="radio" id="q28b" name="q28" value="b"><label for="q28b">b) O número do empregado que está sendo inserido na tabela EMP.</label></div>
+                            <div class="radio-option"><input type="radio" id="q28c" name="q28" value="c"><label for="q28c">c) O número do empregado que já existia na tabela COPIAEMP.</label></div>
+                            <div class="radio-option"><input type="radio" id="q28d" name="q28" value="d"><label for="q28d">d) Um valor nulo, pois é um evento BEFORE INSERT.</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">29. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Um trigger de linha (FOR EACH ROW) executa:</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q29a" name="q29" value="a" required><label for="q29a">a) Apenas uma vez para cada instrução DML, independentemente do número de linhas afetadas.</label></div>
+                            <div class="radio-option"><input type="radio" id="q29b" name="q29" value="b"><label for="q29b">b) Apenas quando o evento é UPDATE.</label></div>
+                            <div class="radio-option"><input type="radio" id="q29c" name="q29" value="c"><label for="q29c">c) Uma vez para cada linha afetada pela instrução DML.</label></div>
+                            <div class="radio-option"><input type="radio" id="q29d" name="q29" value="d"><label for="q29d">d) Apenas antes (BEFORE) do evento ocorrer.</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">30. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual das seguintes ações NÃO é uma característica ou regra de um trigger no Oracle?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q30a" name="q30" value="a" required><label for="q30a">a) Pode ser definido para disparar BEFORE ou AFTER um evento.</label></div>
+                            <div class="radio-option"><input type="radio" id="q30b" name="q30" value="b"><label for="q30b">b) Pode conter o comando COMMIT para confirmar a transação.</label></div>
+                            <div class="radio-option"><input type="radio" id="q30c" name="q30" value="c"><label for="q30c">c) Pode ser acionado por eventos INSERT, UPDATE ou DELETE.</label></div>
+                            <div class="radio-option"><input type="radio" id="q30d" name="q30" value="d"><label for="q30d">d) Fica armazenado no banco de dados e não depende de chamada para sua execução.</label></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Parte 4: Stored Procedures e Functions</div>
+                    <div class="question">
+                        <div class="question-number">31. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Qual é a diferença fundamental entre uma Stored Procedure e uma Function? Explique em termos de retorno de valor e como cada uma é invocada.</div>
+                        <textarea name="q31" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">32. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Explique os três modos de recebimento de parâmetros em subprogramas: IN, OUT e IN OUT.</div>
+                        <textarea name="q32" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">33. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Descreva o benefício de performance obtido ao usar subprogramas (procedures e functions) que são armazenados de forma pré-compilada (p-code) no banco de dados.</div>
+                        <textarea name="q33" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">34. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Uma Stored Procedure pode chamar uma Function? E o contrário, uma Function pode invocar uma Stored Procedure?</div>
+                        <textarea name="q34" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">35. <span class="required">*</span></div>
+                        <div class="question-type">Parágrafo</div>
+                        <div class="question-text">Para que serve o comando GRANT EXECUTE ON nome_procedure TO usuario;?</div>
+                        <textarea name="q35" required placeholder="Digite sua resposta aqui..."></textarea>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">36. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual é o modo padrão de recebimento de parâmetros em uma procedure se nenhum modo for especificado?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q36a" name="q36" value="a" required><label for="q36a">a) OUT</label></div>
+                            <div class="radio-option"><input type="radio" id="q36b" name="q36" value="b"><label for="q36b">b) IN OUT</label></div>
+                            <div class="radio-option"><input type="radio" id="q36c" name="q36" value="c"><label for="q36c">c) IN</label></div>
+                            <div class="radio-option"><input type="radio" id="q36d" name="q36" value="d"><label for="q36d">d) Nenhum, o modo é sempre obrigatório.</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">37. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Em uma procedure, se uma variável com valor inicial é passada como parâmetro no modo OUT, o que acontece com esse valor inicial dentro da procedure?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q37a" name="q37" value="a" required><label for="q37a">a) O valor é mantido e usado no cálculo.</label></div>
+                            <div class="radio-option"><input type="radio" id="q37b" name="q37" value="b"><label for="q37b">b) O valor é ignorado e a variável é tratada como nula no início da procedure.</label></div>
+                            <div class="radio-option"><input type="radio" id="q37c" name="q37" value="c"><label for="q37c">c) Gera um erro de compilação.</label></div>
+                            <div class="radio-option"><input type="radio" id="q37d" name="q37" value="d"><label for="q37d">d) O valor é dobrado automaticamente.</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">38. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual dos seguintes comandos é usado para invocar uma Function e utilizar seu retorno diretamente?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q38a" name="q38" value="a" required><label for="q38a">a) EXECUTE minha_function(param);</label></div>
+                            <div class="radio-option"><input type="radio" id="q38b" name="q38" value="b"><label for="q38b">b) CALL minha_function(param);</label></div>
+                            <div class="radio-option"><input type="radio" id="q38c" name="q38" value="c"><label for="q38c">c) SELECT minha_function(param) FROM DUAL;</label></div>
+                            <div class="radio-option"><input type="radio" id="q38d" name="q38" value="d"><label for="q38d">d) RUN minha_function(param);</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">39. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual comando SQL é utilizado para visualizar o código-fonte de uma procedure ou function armazenada?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q39a" name="q39" value="a" required><label for="q39a">a) select text from user_source where name = 'nome da procedure/function' order by line;</label></div>
+                            <div class="radio-option"><input type="radio" id="q39b" name="q39" value="b"><label for="q39b">b) SHOW CODE NOME_PROCEDURE;</label></div>
+                            <div class="radio-option"><input type="radio" id="q39c" name="q39" value="c"><label for="q39c">c) select * from user_procedures where name = 'NOME_PROCEDURE';</label></div>
+                            <div class="radio-option"><input type="radio" id="q39d" name="q39" value="d"><label for="q39d">d) DESCRIBE NOME_PROCEDURE;</label></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="question-number">40. <span class="required">*</span></div>
+                        <div class="question-type">Múltipla Escolha</div>
+                        <div class="question-text">Qual das afirmações abaixo está correta?</div>
+                        <div class="radio-group">
+                            <div class="radio-option"><input type="radio" id="q40a" name="q40" value="a" required><label for="q40a">a) Uma Function não pode ser chamada por uma Stored Procedure.</label></div>
+                            <div class="radio-option"><input type="radio" id="q40b" name="q40" value="b"><label for="q40b">b) Uma Stored Procedure é utilizada em um comando SELECT para atribuir valores a variáveis.</label></div>
+                            <div class="radio-option"><input type="radio" id="q40c" name="q40" value="c"><label for="q40c">c) Uma Function obrigatoriamente retorna um valor, definido na cláusula RETURN.</label></div>
+                            <div class="radio-option"><input type="radio" id="q40d" name="q40" value="d"><label for="q40d">d) Stored Procedures normalmente só possuem parâmetros de entrada (IN).</label></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <button type="submit" class="submit-btn">Enviar Respostas</button>
+                    <button type="button" class="submit-btn gabarito-btn" onclick="gerarGabarito()">Gerar Gabarito</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
